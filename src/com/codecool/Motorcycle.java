@@ -5,17 +5,16 @@ public class Motorcycle extends Vehicle{
 
     private int normalSpeed;
     private static Random random = new Random();
-    private static int motorName = 1;
+    private static int motorname = 1;
 
     public Motorcycle() {
         this.normalSpeed = 100;
-
     }
 
     @Override
     public int getCurrentSpeed(Race race) {
         if (Weather.isRaining()) {
-            int newSpeed = normalSpeed - (10 + random.nextInt(45));
+            int newSpeed = normalSpeed - (5 + random.nextInt(45));
             return newSpeed;
         }
         return normalSpeed;
@@ -23,6 +22,10 @@ public class Motorcycle extends Vehicle{
 
     @Override
     public void generateName() {
-        this.setName("Motorcycle " + Integer.toString(motorName++) );
+        this.setName("Motorcycle" + Integer.toString(motorname++));
     }
 }
+
+
+
+

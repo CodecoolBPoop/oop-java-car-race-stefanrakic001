@@ -5,29 +5,33 @@ import java.util.*;
 
 public class Race {
 
-    private static final int raceHours = 50;
-    private List<Vehicle> vehicleList = new ArrayList<>();
+    private List<Vehicle> vehiclesList = new ArrayList<>();
+    private final static int raceHours = 50;
     private boolean isThereABrokenTruck;
 
+
+
     public void createVehicles() {
-        for (int i = 0; i < 10; i++) {
-            vehicleList.add(new Car());
-            vehicleList.add(new Motorcycle());
-            vehicleList.add(new Truck());
+        for (int i = 0; i <10 ; i++) {
+            vehiclesList.add(new Car());
+            vehiclesList.add(new Motorcycle());
+            vehiclesList.add(new Truck());
+        }
 
         }
 
-    }
+
     public void findBrokenTruck() {
-        for (Vehicle vehicle: vehicleList) {
+        for (Vehicle vehicle: vehiclesList) {
             if (vehicle instanceof Truck) {
-                if (((Truck) vehicle).getNormalSpeed() == 0 ) {
+                if (((Truck) vehicle).getNormalSpeed() ==0) {
                     setThereABrokenTruck(true);
                     break;
                 }
             }
 
         }
+
     }
 
     public void simulateRace() {
@@ -35,18 +39,19 @@ public class Race {
             setThereABrokenTruck(false);
             findBrokenTruck();
             Weather.setRaining();
-            for (Vehicle vehicle : vehicleList) {
+            for (Vehicle vehicle: vehiclesList) {
                 vehicle.moveForAnHour(this);
+
             }
+
         }
 
     }
 
     public void printRaceResults() {
-        for (Vehicle vehicle : vehicleList) {
-            String result = vehicle.getName() + " " + vehicle.getDistanceTraveled() + " km";
+        for (Vehicle vehicle: vehiclesList) {
+            String result = vehicle.getName()+" "+vehicle.getDistanceTraveled();
             System.out.println(result);
-
         }
 
     }

@@ -2,21 +2,22 @@ package com.codecool;
 
 public abstract class Vehicle {
 
-
     private String name;
-    private int distanceTraveled = 0;
+    private int distanceTraveled;
+
 
     public abstract int getCurrentSpeed(Race race);
     public abstract void generateName();
 
 
-    public Vehicle() {
-        generateName();
-    }
 
     void moveForAnHour(Race race) {
         distanceTraveled += getCurrentSpeed(race);
 
+    }
+
+    public Vehicle() {
+        generateName();
     }
 
     public String getName() {
@@ -30,4 +31,5 @@ public abstract class Vehicle {
     public int getDistanceTraveled() {
         return distanceTraveled;
     }
+
 }
