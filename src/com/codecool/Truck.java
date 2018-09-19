@@ -9,7 +9,6 @@ public class Truck extends Vehicle {
     private int breakdownTurnsLeft = 0;
 
 
-
     public Truck() {
         this.normalSpeed = 100;
     }
@@ -19,11 +18,11 @@ public class Truck extends Vehicle {
     }
 
     public int getCurrentSpeed(Race race) {
-        if (breakdownTurnsLeft ==0) {
+        if (breakdownTurnsLeft == 0) {
             normalSpeed = 100;
-            if (random.nextInt(5)==0) {
-                breakdownTurnsLeft =2;
-                normalSpeed =0;
+            if (random.nextInt(5) == 0) {
+                breakdownTurnsLeft = 2;
+                normalSpeed = 0;
             }
         } else {
             breakdownTurnsLeft--;

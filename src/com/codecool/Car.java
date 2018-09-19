@@ -5,7 +5,6 @@ import java.util.Random;
 
 public class Car extends Vehicle{
 
-    private static Random random = new Random();
     private int normalSpeed;
 
     private static List<String> carNames = new ArrayList<>(Arrays.asList(
@@ -22,7 +21,7 @@ public class Car extends Vehicle{
     ));
 
     public Car() {
-        this.normalSpeed = 80 + random.nextInt(30);
+        this.normalSpeed = 80 + new Random().nextInt(30);
 
     }
 
@@ -36,8 +35,8 @@ public class Car extends Vehicle{
 
     @Override
     public void generateName() {
-        int firstName = random.nextInt(carNames.size());
-        int lastName = random.nextInt(carNames.size());
+        int firstName = new Random().nextInt(carNames.size());
+        int lastName = new Random().nextInt(carNames.size());
         this.setName(carNames.get(firstName)+" "+ carNames.get(lastName));
     }
 }

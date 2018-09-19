@@ -5,7 +5,6 @@ public abstract class Vehicle {
     private String name;
     private int distanceTraveled;
 
-
     public abstract int getCurrentSpeed(Race race);
     public abstract void generateName();
 
